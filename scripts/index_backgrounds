@@ -1,0 +1,11 @@
+#!/bin/sh
+
+images=$(find ./backgrounds -name "*.jpg")
+
+true > ./backgrounds/index.txt
+
+for path in $images; do
+  image=$(basename "$path")
+  author=$(basename "$(dirname "$path")")
+  echo "$author/$image" >> ./backgrounds/index.txt
+done
