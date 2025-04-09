@@ -1,6 +1,6 @@
 #!/bin/sh
 
-images=$(find ./backgrounds -name "*.jpg")
+images=$(find ./backgrounds -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif")
 
 true > ./backgrounds/index.txt
 
