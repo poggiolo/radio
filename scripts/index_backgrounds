@@ -1,6 +1,7 @@
 #!/bin/sh
 
-images=$(find ./backgrounds -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif")
+# We index only .jpg because of the normalization process that happens before
+images=$(find ./backgrounds -name "*.jpg")
 
 true > ./backgrounds/index.txt
 

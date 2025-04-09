@@ -4,15 +4,7 @@ extensions="png jpeg gif"
 
 for ext in $extensions; do
   images=$(find ./backgrounds -name "*.$ext")
-
-  if [ -n "$images" ]; then
-    echo "Converting $ext images to jpg"
-    mogrify -format jpg "$images"
-
-    for f in $images; do
-      rm -f "$f"
-    done
-  fi
+  find ./backgrounds -name "*.$ext" -exec mogrify -format jpg {} +
 done
 
 # Optimize jpg images
