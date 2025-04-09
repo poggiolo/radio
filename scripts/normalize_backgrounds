@@ -3,7 +3,6 @@
 extensions="png jpeg gif"
 
 for ext in $extensions; do
-  images=$(find ./backgrounds -name "*.$ext")
   find ./backgrounds -name "*.$ext" -exec mogrify -format jpg {} +
 done
 
